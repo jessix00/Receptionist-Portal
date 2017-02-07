@@ -15,7 +15,8 @@ $result = $conn->query($sql);
 <tr>
 <th>Name</th>
 <th>Meeting</th>
-<th>Time</th>
+<th>Time-In</th>
+<th>Time-Out </th>
 <th>Badge</th>
 <th>Vehicle</th>
 </tr>
@@ -30,11 +31,12 @@ if($result ->num_rows > 0){
 <tr>
 <td><?php echo $row['Name']; ?></td>
 <td><?php echo $row['Meeting']; ?></td>
-<td><?php echo $row['Time']; ?></td>
+<td><?php echo $row['Timein']; ?></td>
+<td><?php echo $row['Timeout']; ?></td>
 <td><?php echo $row['Badge']; ?></td>
 <td><?php echo $row['Vehicle']; ?></td>
 <!--Edit Option -->
-<td><a href="edit.php?edit_id=<?php echo $row['Name']; ?>" alt="edit">Edit</a></td>
+<td><a href="edit.php?edit_id=<?php echo $row['ID']; ?>" alt="edit">Edit</a></td>
 </tr>
 <?php
  }
