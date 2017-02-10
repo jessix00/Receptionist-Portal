@@ -12,12 +12,12 @@ if(!mysqli_select_db($con,'form-test'))
 
 $Name = $_POST ['Name'];
 $Meeting = $_POST['Meeting'];
-$Time = $_POST['Time'];
+$Timein = $_POST['Timein'];
 $Badge = $_POST['Badge'];
 $Vehicle = $_POST['Vehicle'];
 
-$sql = "INSERT INTO `form1` (`Name`, `Meeting`, `Time`, `Badge`, `Vehicle`) 
-VALUES ('$Name','$Meeting','$Time','$Badge','$Vehicle')";
+$sql = "INSERT INTO `form1` (`Name`, `Meeting`, `Timein`, `Badge`, `Vehicle`) 
+VALUES ('$Name','$Meeting','$Timein','$Badge','$Vehicle')";
 
 if(!mysqli_query($con,$sql))
 {
