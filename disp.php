@@ -15,7 +15,6 @@ $result = $conn->query($sql);
 <tr>
 <th>Name</th>
 <th>Meeting</th>
-<th>Time-In</th>
 <th>Time-Out </th>
 <th>Badge</th>
 <th>Vehicle</th>
@@ -31,7 +30,6 @@ if($result ->num_rows > 0){
 <tr>
 <td><?php echo $row['Name']; ?></td>
 <td><?php echo $row['Meeting']; ?></td>
-<td><?php echo $row['Timein']; ?></td>
 <td><?php echo $row['Timeout']; ?></td>
 <td><?php echo $row['Badge']; ?></td>
 <td><?php echo $row['Vehicle']; ?></td>
