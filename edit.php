@@ -13,11 +13,10 @@ if(isset($_GET['edit_id'])){
 if(isset($_POST['btn-update'])){
     $name = $_POST['Name'];
     $meeting = $_POST['Meeting'];
-    $timein = $_POST['Timein'];
     $timeout = $_POST['Timeout'];
     $badge = $_POST['Badge'];
     $vehicle = $_POST['Vehicle'];
-        $update = "UPDATE form1 SET Name='$name',Meeting='$meeting',Timein='$timein', 
+        $update = "UPDATE form1 SET Name='$name',Meeting='$meeting', 
         Timeout='$timeout',Badge='$badge',Vehicle='$vehicle' WHERE ID =". $_GET['edit_id'];
         $up = mysqli_query($conn, $update);
 
@@ -30,9 +29,8 @@ if(isset($_POST['btn-update'])){
     }
 }
 ?>
+
 <!--Create Edit form -->
-
-
 <!doctype html>
 <html>
 <body>
@@ -40,7 +38,6 @@ if(isset($_POST['btn-update'])){
         <h1>Edit Information</h1>
         <label>Name:</label><input type="text" name="Name" placeholder="Name" value="<?php echo $row['Name']; ?>"><br/><br/>
         <label>Meeting with:</label><input type="text" name="Meeting" placeholder="Meeting with" value="<?php echo $row['Meeting']; ?>"><br/><br/>
-        <label>Time-In:</label><input type="time" name="Timein" placeholder="Time In" value="<?php echo $row['Timein']; ?>"><br/><br/>
         <label>Time-Out:</label><input type="time" name="Timeout" placeholder="Time Out" value="<?php echo $row['Timeout']; ?>"><br/><br/>
         <label>Badge-Number:</label><input type="number" name="Badge" placeholder="Badge Number" value="<?php echo $row['Badge']; ?>"><br/><br/>
         <label>Vehicle:</label><input type="text" name="Vehicle" placeholder="Vehicle" value="<?php echo $row['Vehicle']; ?>"><br/><br/>

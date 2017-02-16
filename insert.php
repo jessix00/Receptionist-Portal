@@ -1,4 +1,5 @@
 <?php
+//connection
 $con = mysqli_connect ('localhost', 'root', 'Hellokitty');
 
 if(!$con)
@@ -10,14 +11,15 @@ if(!mysqli_select_db($con,'form-test'))
     echo 'Database Not Selected';
 }
 
+//DB Fields
 $Name = $_POST ['Name'];
 $Meeting = $_POST['Meeting'];
-$Timein = $_POST['Timein'];
 $Badge = $_POST['Badge'];
 $Vehicle = $_POST['Vehicle'];
 
-$sql = "INSERT INTO `form1` (`Name`, `Meeting`, `Timein`, `Badge`, `Vehicle`) 
-VALUES ('$Name','$Meeting','$Timein','$Badge','$Vehicle')";
+
+$sql = "INSERT INTO `form1` (`Name`, `Meeting`, `Badge`, `Vehicle`,`DateTime-In`) 
+VALUES ('$Name','$Meeting','$Badge','$Vehicle',NOW())";
 
 if(!mysqli_query($con,$sql))
 {
@@ -25,7 +27,7 @@ if(!mysqli_query($con,$sql))
 }
 else
 {
-    echo 'Inserted';
+    echo 'Thank You!';
 }
 header("refresh:2; url=index.html");
 ?>
