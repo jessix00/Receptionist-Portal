@@ -3,7 +3,7 @@
 include 'conn.php';
 //Select database
 
-$sql = "SELECT * FROM form1";
+$sql = "SELECT * FROM form1 WHERE Display = '1'";
 $result = $conn->query($sql);
 ?>
 <!--Form starts here-->
