@@ -17,7 +17,7 @@ if(isset($_POST['btn-update'])){
     $badge = $_POST['Badge'];
     $vehicle = $_POST['Vehicle'];
         $update = "UPDATE form1 SET Name='$name',Meeting='$meeting', 
-        Timeout='$timeout',Badge='$badge',Vehicle='$vehicle' WHERE ID =". $_GET['edit_id'];
+        Timeout='$timeout',Badge='$badge',Vehicle='$vehicle',Display='0' WHERE ID =". $_GET['edit_id'];
         $up = mysqli_query($conn, $update);
 
  if(!isset($sql)){
@@ -41,7 +41,7 @@ if(isset($_POST['btn-update'])){
         <label>Time-Out:</label><input type="time" name="Timeout" placeholder="Time Out" value="<?php echo $row['Timeout']; ?>"><br/><br/>
         <label>Badge-Number:</label><input type="number" name="Badge" placeholder="Badge Number" value="<?php echo $row['Badge']; ?>"><br/><br/>
         <label>Vehicle:</label><input type="text" name="Vehicle" placeholder="Vehicle" value="<?php echo $row['Vehicle']; ?>"><br/><br/>
-            <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Update</strong></button>
+            <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Save &amp; Submit</strong></button>
                 <a href="disp.php"><button type="button" value="button">Cancel</button></a>
 </form>
 

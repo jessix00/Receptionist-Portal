@@ -1,7 +1,7 @@
 <?php
 $server = "localhost";
 $user = "root";
-$pass = "";
+$pass = "Hellokitty";
 $dbname = "form-test";
 
 //Create a connection in mysqli

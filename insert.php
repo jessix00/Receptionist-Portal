@@ -18,8 +18,8 @@ $Badge = $_POST['Badge'];
 $Vehicle = $_POST['Vehicle'];
 
 
-$sql = "INSERT INTO `form1` (`Name`, `Meeting`, `Badge`, `Vehicle`,`DateTime-In`) 
-VALUES ('$Name','$Meeting','$Badge','$Vehicle',NOW())";
+$sql = "INSERT INTO `form1` (`Name`, `Meeting`, `Badge`, `Vehicle`,`DateTime-In`,`Display`) 
+VALUES ('$Name','$Meeting','$Badge','$Vehicle',NOW(),'1')";
 
 if(!mysqli_query($con,$sql))
 {
