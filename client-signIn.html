@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Client Sign-In Form</title>
+
+<!--Fonts/styles-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="client-styles.css" rel="stylesheet">
+</head>
+
+
+<body>
+	<div class= "container">
+		<div class= "flex-item">
+		<h1 class="signin-header">Please Sign-in</h1>
+
+			<form action="insert.php" method="post">
+			
+				<div class= "field1">
+					<label>FULL NAME:</label>
+					<input type="text" name="Name"/>
+				</div>
+				
+				<div class="field2">
+					<label>MEETING WITH/PURPOSE:</label>
+					<input type="text" name="Meeting"/>
+				</div>
+	
+				<div class="field3">
+					<label>VEHICLE:</label>
+					<input type="text"  name="Vehicle" />
+				</div>
+
+				<div class="field4">
+					<label>BADGE NUMBER:</label>
+					<input type="number" name="Badge" />
+				</div>
+
+		<div class="button">
+		<button type="submit">SUBMIT</button>
+		</div>
+
+</div>
+</div>
+</form>
+
+</body>
+</html>
