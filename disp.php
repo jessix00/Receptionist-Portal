@@ -14,6 +14,7 @@ $result = $conn->query($sql);
 <table border ="1" align="center" style="line-height:25px;">
 <tr>
 <th>Name</th>
+<th>Company Name</th>
 <th>Meeting</th>
 <th>Time-Out </th>
 <th>Badge</th>
@@ -29,6 +30,7 @@ if($result ->num_rows > 0){
 
 <tr>
 <td><?php echo $row['Name']; ?></td>
+<td><?php echo $row['CompanyName']; ?></td>
 <td><?php echo $row['Meeting']; ?></td>
 <td><?php echo $row['Timeout']; ?></td>
 <td><?php echo $row['Badge']; ?></td>
@@ -43,7 +45,7 @@ else
 {
 ?>
 <tr>
-<th colspan-"2">No Data Found!</th>
+<th colspan-"2">No one in queue</th>
 </tr>
 <?php
 }
