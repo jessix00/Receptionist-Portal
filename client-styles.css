@@ -1,46 +1,48 @@
 body {
 	font-family: "Roboto";
 	font-size: 20px;
-	color: #fff;
-
+	background: #e2dedb;
+ 	color: #b3aca7;
 }
 
 .container {
-	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-	-webkit-box-flex-direction: row;
-	-moz-box-flex-direction: row;
-	-webkit-flex-direction: row;
-	flex-direction: row;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.flex-item {
-	margin: auto;
-	margin-top: 50px;
-	background: #3AAFAB;
-	height: 50%;
-	width: 50%;
-	border-radius: 5%;	
-	text-align: center;
+  position: relative;
+  width: 500px;
+  margin: 50px auto 100px auto;
+  background-color:#fff;
+	
 }
 
 .signin-header {
-	text-align: center;
+  position: relative;
+  margin: 100px 0 25px 0;
+  font-size: 45px;
+  text-align: center;
+ /* letter-spacing: 7px;*/
 }
 
-.button {
-	text-align: center;
-	margin-top:20px;
-	text-decoration: none;
-    font-size: 16px;
-	color: #3AAFAB;
+input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875em;
+  width: 470px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  border: solid 1px #b3aca7;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  border: solid 1px #b3aca7;
+  border-bottom: none;
+}
+
+button {
+  width: 502px;
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+  color: #b3aca7;
+  outline:none;
+  cursor: pointer;
+  border: solid 1px #b3aca7;
 }
