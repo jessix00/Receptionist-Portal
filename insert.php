@@ -13,13 +13,14 @@ if(!mysqli_select_db($con,'form-test'))
 
 //DB Fields
 $Name = $_POST ['Name'];
+$CompanyName = $_POST ['CompanyName'];
 $Meeting = $_POST['Meeting'];
 $Badge = $_POST['Badge'];
 $Vehicle = $_POST['Vehicle'];
 
 
-$sql = "INSERT INTO `form1` (`Name`, `Meeting`, `Badge`, `Vehicle`,`DateTime-In`,`Display`) 
-VALUES ('$Name','$Meeting','$Badge','$Vehicle',NOW(),'1')";
+$sql = "INSERT INTO `form1` (`Name`,`CompanyName`, `Meeting`, `Badge`, `Vehicle`,`DateTime-In`,`Display`) 
+VALUES ('$Name','$CompanyName','$Meeting','$Badge','$Vehicle',NOW(),'1')";
 
 if(!mysqli_query($con,$sql))
 {
@@ -27,8 +28,8 @@ if(!mysqli_query($con,$sql))
 }
 else
 {
-    echo 'Thank You!';
+   echo "<script>alert('Thank You!');</script>";
 }
-header("refresh:2; url=client-signin.html");
+header("refresh:.5; url=client-signin.html");
 ?>
 
