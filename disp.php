@@ -23,7 +23,7 @@ $result = $conn->query($sql);
                 background: #e2dedb;
                 color: #000;
                 }
-            h1 {
+              h1 {
                 text-align: center;
                }   
 
@@ -31,20 +31,23 @@ $result = $conn->query($sql);
                     position: relative;
                     margin: 20px auto 100px auto;
                     border: solid 1px #b3aca7;
+                    background-color:#fff;
+                    text-align: center;
                } 
 
                th {
-                border: solid 1px #b3aca7;
-                padding: 5px;
+                padding: 10px;
                 background-color:#fff;
+                    
                }
                td {
-                   border: solid 1px #b3aca7;
                    padding: 5px;
                    background-color:#fff;
+                   border: solid 1px #b3aca7;
+                       
                }
                tr {
-                
+                   border: solid 1px #b3aca7;
                }
     </style>
 </head>

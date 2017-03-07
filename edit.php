@@ -34,6 +34,54 @@ if(isset($_POST['btn-update'])){
 <!--Create Edit form -->
 <!doctype html>
 <html>
+    <head> 
+        <!--Fonts/styles-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href-"normalize.css" rel="stylesheet">
+	  <style type="text/css">
+            body {
+                font-family: "Roboto";
+                font-size: 20px;
+                background: #e2dedb;
+
+            }
+            h1 {
+                position: relative;
+                margin: 10px 0 10px 0;
+                font-size: 30px;
+                text-align: center;
+                padding:10px;
+            }
+
+            label {
+                padding:5px;
+            }
+
+            input {
+                width: 300px;
+                height: 30px;
+                font-family: "Roboto";
+                font-size: 18px;
+                padding-left:10px;
+                float: right;
+            }
+
+            form {
+                position: relative;
+                width: 500px;
+                margin: 20px auto 100px auto;
+	        }
+            button {
+                font-family: "Roboto";
+                text-decoration:none;
+                font-size: 18px;
+                cursor:pointer;
+
+            }
+            
+
+        </style>
+    </head>
 <body>
     <form method="post">
         <h1>Edit Information</h1>
@@ -46,7 +94,6 @@ if(isset($_POST['btn-update'])){
             <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Save &amp; Submit</strong></button>
                 <a href="disp.php"><button type="button" value="button">Cancel</button></a>
 </form>
-
 <!-- Alert for Updating -->
 <script>
 function update(){
