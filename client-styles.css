@@ -1,8 +1,7 @@
 body {
 	font-family: "Roboto";
 	font-size: 20px;
-	background: #e2dedb;
- 	color: #b3aca7;
+  background: #e2dedb;
 }
 
 .container {
@@ -32,8 +31,6 @@ input {
   height: 50px;
   padding: 0px 15px 0px 15px;
   border: solid 1px #b3aca7;
-  background: transparent;
-  outline: none;
   color: #726659;
   border: solid 1px #b3aca7;
   border-bottom: none;
