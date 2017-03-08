@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 <!--Fonts/styles-->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href-"normalize.css" rel="stylesheet">
-	  <style type="text/css">
+	  <style>
             body {
                 font-family: "Roboto";
                 font-size: 20px;

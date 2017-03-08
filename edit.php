@@ -31,11 +31,11 @@ if(isset($_POST['btn-update'])){
 }
 ?>
 
-<!--Create Edit form -->
+<!--Edit form -->
 <!doctype html>
 <html>
     <head> 
-        <!--Fonts/styles-->
+    <!--Fonts/styles-->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href-"normalize.css" rel="stylesheet">
 	  <style type="text/css">
