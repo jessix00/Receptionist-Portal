@@ -18,7 +18,7 @@ if(isset($_POST['btn-update'])){
     $badge = $_POST['Badge'];
     $vehicle = $_POST['Vehicle'];
         $update = "UPDATE form1 SET Name='$name', CompanyName='$companyname',Meeting='$meeting', 
-        Timeout='$timeout',Badge='$badge',Vehicle='$vehicle',Display='0' WHERE ID =". $_GET['edit_id'];
+        Timeout=NOW(),Badge='$badge',Vehicle='$vehicle',Display='0' WHERE ID =". $_GET['edit_id'];
         $up = mysqli_query($conn, $update);
 
  if(!isset($sql)){
