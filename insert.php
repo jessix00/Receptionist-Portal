@@ -1,12 +1,12 @@
 <?php
 //connection
-$con = mysqli_connect ('localhost', 'root', 'Hellokitty');
+include 'conn.php';
 
-if(!$con)
+if(!$conn)
     {
         echo 'Not Connected to Server';
     }
-if(!mysqli_select_db($con,'form-test'))
+if(!mysqli_select_db($conn,'form-test'))
 {
     echo 'Database Not Selected';
 }
@@ -22,7 +22,7 @@ $Vehicle = $_POST['Vehicle'];
 $sql = "INSERT INTO `form1` (`Name`,`CompanyName`, `Meeting`, `Badge`, `Vehicle`,`DateTime-In`,`Display`) 
 VALUES ('$Name','$CompanyName','$Meeting','$Badge','$Vehicle',NOW(),'1')";
 
-if(!mysqli_query($con,$sql))
+if(!mysqli_query($conn,$sql))
 {
     echo'Not Inserted';
 }
