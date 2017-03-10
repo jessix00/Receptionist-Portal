@@ -3,7 +3,7 @@
 include 'conn.php';
 //Select database
 
-$sql = "SELECT * FROM form1 WHERE Timeout ='NULL'";
+$sql = "SELECT * FROM form1 WHERE Display = '1'";
 $result = $conn->query($sql);
 ?>
 
@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 <!--Fonts/styles-->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href-"normalize.css" rel="stylesheet">
-	  <style>
+	  <style type="text/css">
             body {
                 font-family: "Roboto";
                 font-size: 20px;
@@ -54,6 +54,7 @@ $result = $conn->query($sql);
 <body>
 
 <h1>Sign-In Log</h1>
+  <!--  <table border ="1" align="center" style="line-height:25px;"> -->
    <table>
      <tr>
             <th>Name</th>

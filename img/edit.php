@@ -18,7 +18,7 @@ if(isset($_POST['btn-update'])){
     $badge = $_POST['Badge'];
     $vehicle = $_POST['Vehicle'];
         $update = "UPDATE form1 SET Name='$name', CompanyName='$companyname',Meeting='$meeting', 
-        Timeout=NOW(),Badge='$badge',Vehicle='$vehicle' WHERE ID =". $_GET['edit_id'];
+        Timeout='$timeout',Badge='$badge',Vehicle='$vehicle',Display='0' WHERE ID =". $_GET['edit_id'];
         $up = mysqli_query($conn, $update);
 
  if(!isset($sql)){
@@ -31,11 +31,11 @@ if(isset($_POST['btn-update'])){
 }
 ?>
 
-<!--Edit form -->
+<!--Create Edit form -->
 <!doctype html>
 <html>
     <head> 
-    <!--Fonts/styles-->
+        <!--Fonts/styles-->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href-"normalize.css" rel="stylesheet">
 	  <style type="text/css">
@@ -76,8 +76,10 @@ if(isset($_POST['btn-update'])){
                 text-decoration:none;
                 font-size: 18px;
                 cursor:pointer;
+
             }
             
+
         </style>
     </head>
 <body>
