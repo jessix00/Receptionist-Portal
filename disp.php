@@ -8,8 +8,9 @@ $result = $conn->query($sql);
 ?>
 
 <!--Table starts here-->
+
 <html>
-<head>
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Client Sign-In Form</title>
@@ -63,7 +64,6 @@ $result = $conn->query($sql);
             <th>Badge</th>
             <th>Vehicle</th>
       </tr>
-
 <?php
 //Fetch data from DB
 if($result ->num_rows > 0){
@@ -77,10 +77,26 @@ if($result ->num_rows > 0){
         <td><?php echo $row['Timeout']; ?></td>
         <td><?php echo $row['Badge']; ?></td>
         <td><?php echo $row['Vehicle']; ?></td>
-        <!--Edit Option -->
+
+        <!--Edit Button -->
         <td><a href="edit.php?edit_id=<?php echo $row['ID']; ?>" alt="edit">Edit</a></td>
+
+        <!-- Time-Out Button -->
+        <td><input type="button" onClick="change(<?php echo $row['ID']; ?>)" name="Time-Out" value="Clock-Out"></td> 
     </tr>
-<?php
+    
+<!--Time Out Button Script-->
+<script language="javascript">
+    function change(out) {
+        if(confirm("Do you want to sign this client out?")){
+            window.location.href='timeout.php?time_out=' +out+'';
+            return true;
+        }
+    }
+</script>
+
+
+ <?php
  }
 }
 else
@@ -92,6 +108,7 @@ else
 <?php
 }
 ?>
+
+</table>
 </body>
 </html>
-</table>
