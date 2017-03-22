@@ -1,8 +1,8 @@
 <?php
 //Connection to database
 include 'conn.php';
-//Select database
 
+//Select database where Timeout has no value
 $sql = "SELECT * FROM form1 WHERE Timeout ='NULL'";
 $result = $conn->query($sql);
 ?>
@@ -60,7 +60,6 @@ $result = $conn->query($sql);
             <th>Name</th>
             <th>Company Name</th>
             <th>Meeting</th>
-            <th>Time-Out </th>
             <th>Badge</th>
             <th>Vehicle</th>
       </tr>
@@ -74,7 +73,6 @@ if($result ->num_rows > 0){
         <td><?php echo $row['Name']; ?></td>
         <td><?php echo $row['CompanyName']; ?></td>
         <td><?php echo $row['Meeting']; ?></td>
-        <td><?php echo $row['Timeout']; ?></td>
         <td><?php echo $row['Badge']; ?></td>
         <td><?php echo $row['Vehicle']; ?></td>
 
