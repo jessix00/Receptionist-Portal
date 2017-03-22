@@ -24,16 +24,15 @@ DROP TABLE IF EXISTS `form1`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `form1` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Display` text NOT NULL,
   `Name` varchar(20) DEFAULT NULL,
   `CompanyName` varchar(20) NOT NULL,
   `Meeting` varchar(20) DEFAULT NULL,
-  `Timeout` time DEFAULT NULL,
+  `Timeout` datetime DEFAULT '0000-00-00 00:00:00',
   `Badge` varchar(20) DEFAULT NULL,
   `Vehicle` varchar(20) DEFAULT NULL,
-  `DateTime-In` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `DateTime-In` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -45,4 +44,7 @@ CREATE TABLE `form1` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-05 22:10:02
+-- Dump completed on 2017-03-21 20:18:30
+
+--How to: mysqldump -u root -p --no-data dbname > schema.sql
+
