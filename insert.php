@@ -1,26 +1,25 @@
 <?php
 //connection
 include 'conn.php';
-
 if(!$conn)
     {
-        echo 'Not Connected to Server';
+    echo 'Not Connected to Server';
     }
 //Select DB
 if(!mysqli_select_db($conn,'form-test'))
     {
     echo 'Database Not Selected';
     }
-
 //Form Fields
 $Name = $_POST ['Name'];
 $CompanyName = $_POST ['CompanyName'];
-$Meeting = $_POST['Meeting'];
-$Badge = $_POST['Badge'];
-$Vehicle = $_POST['Vehicle'];
+$Contact = $_POST ['Contact'];
+$Purpose = $_POST ['Purpose'];
+$Badge = $_POST ['Badge'];
 
-$sql = "INSERT INTO `form1` (`Name`,`CompanyName`, `Meeting`, `Badge`, `Vehicle`,`DateTime-In`) 
-VALUES ('$Name','$CompanyName','$Meeting','$Badge','$Vehicle',NOW())";//NOW inserts curent time date
+//Inserts inputs into DB
+$sql = "INSERT INTO `form1` (`Name`,`CompanyName`, `Contact`, `Purpose`, `Badge`, `TimeIn`) 
+VALUES ('$Name','$CompanyName','$Contact','$Purpose','$Badge', NOW())";//NOW inserts current time date
 
 if(!mysqli_query($conn,$sql))
 {
@@ -28,10 +27,10 @@ if(!mysqli_query($conn,$sql))
 }
 else
 {
-    //Alert for Submitting
-   echo "<script>alert('Thank You!');</script>";
+//Alert for Submitting
+    echo "<script>alert('Thank You!');</script>";
 }
-    //refresh/reloads index page
-header("refresh:.3; url=index.html");
+//refresh index page
+    header("refresh:.3; url=index.html");
 ?>
 

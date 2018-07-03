@@ -1,0 +1,49 @@
+ body {
+  font-family: "Roboto";
+  font-size: 15px;
+  background: #e2dedb;
+  color: #000;
+}
+
+
+h1 {
+  text-align: center;
+  padding: 35px 0 20px;
+  font-size: 35px;
+}   
+
+a {
+  text-decoration: underline;
+  color: blue;
+}
+
+table {
+  position: relative;
+  margin: 20px auto 100px auto;
+  background-color:#fff;
+  border-collapse: collapse;
+} 
+
+tr {
+  border: solid 1px #b3aca7;
+}
+.firstHead {
+  padding:10px 50px 10px 50px;
+  background-color:#fff;
+  border-bottom: solid 2px #b3aca7;
+  text-align: left;
+  background-color: #5daec6;
+}
+
+.firstRows {
+  padding:10px 50px 10px 50px;
+  background-color:#fff;
+  border-bottom: solid 1px #b3aca7;
+  border-collapse: collapse;      
+}
+
+.editButton{
+  margin: 10px;
+  text-decoration: none;
+  color: #000;
+}
