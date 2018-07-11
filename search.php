@@ -10,15 +10,15 @@
 	<div class="searchBar">
 		<form class="searchButton" method="post" action="search.php" autocomplete="off">
 			<input type="text" name="query" placeholder="Search">
-		<select name="column">
-			<option value="Name">Name</option>
-			<option value="CompanyName">Company Name</option>
-			<option value="Contact">Ipro Contact</option>
-			<option value="Purpose">Purpose</option>
-			<option value="Badge">Badge Number</option>
-			<option value="TimeIn">Time In</option>
-			<option value="Timeout">Time Out</option>
-		</select>
+			<select name="column">
+				<option value="Name">Name</option>
+				<option value="CompanyName">Company Name</option>
+				<option value="Contact">Ipro Contact</option>
+				<option value="Purpose">Purpose</option>
+				<option value="Badge">Badge Number</option>
+				<option value="TimeIn">Time In</option>
+				<option value="Timeout">Time Out</option>
+			</select>
 			<!--Find Button-->
 			<input type="submit" name="submit" value="Find">
 		</form>
@@ -41,6 +41,7 @@
 			</tr>
 
 <?php 
+session_start();
 //if "find" is clicked connect to DB, if error echo error msg
 if (isset($_POST['submit'])) {
 	$connection = new mysqli("localhost", "root", "","form-test");
@@ -53,33 +54,36 @@ if (isset($_POST['submit'])) {
 
 //Always default search to Name column
 	if ($column == "" || ($column != "Name" && $column != "CompanyName" && $column != "Contact" && $column != "Purpose" && $column != "Badge" && $column != "TimeIn" && $column != "Timeout"))
-	$column = "Name";
+ 	$column = "Name";
 
 //Fetch from DB
-	$sql = "SELECT * FROM form1 WHERE $column LIKE '%$query%'";
+	$sql = "SELECT * FROM form1 WHERE $column LIKE '$query%'";
 	$result = mysqli_query($connection, $sql);
-
+	
+//If the number of rows in out result set is grater than zero, run this while loop. The while loop returns an associative array of strings.
+	$_SESSION["searchResults"] = array();
 	if (mysqli_num_rows($result) > 0) {
-	while ($row = mysqli_fetch_assoc($result)){ ?>
-<!--Display search results on html table-->
-		<tr>
-		<td><?php echo $row['Name']; ?></td>
-		<td><?php echo $row['CompanyName']; ?></td>
-		<td><?php echo $row['Contact']; ?></td>
-		<td><?php echo $row['Purpose']; ?></td>
-		<td><?php echo $row['Badge']; ?></td>
-		<td><?php echo $row['TimeIn'] ?></td>
-		<td><?php echo $row['Timeout']; ?><br></td>
-	</tr>
-<?php
-}	
-} 	
+	while ($row = mysqli_fetch_assoc($result)){ 
+		$_SESSION["searchResults"] []= $row; } }
 
-else { ?> 
+		foreach ($_SESSION["searchResults"] as $data) {?>
+		<tr>
+			<td><?php echo $data ['Name']; ?></td> 
+			<td><?php echo $data ['CompanyName']; ?></td> 
+			<td><?php echo $data ['Contact']; ?></td> 
+			<td><?php echo $data ['Purpose']; ?></td> 
+			<td><?php echo $data ['Badge']; ?></td> 
+			<td><?php echo $data ['TimeIn']; ?></td> 
+			<td><?php echo $data ['Timeout']; ?></td> 
+		</tr>
+<?php
+}
+}
+
+else {?> 
 	<tr> <td colspan="7"> <?php echo "No Matches"; ?></td> </tr>
 <?php
 } 
-}
 ?>
 
 </table>
