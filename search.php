@@ -57,14 +57,22 @@ if (isset($_POST['submit'])) {
  	$column = "Name";
 
 //Fetch from DB
-	$sql = "SELECT * FROM form1 WHERE $column LIKE '$query%'";
+	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%e/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%e/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%'";
 	$result = mysqli_query($connection, $sql);
+
+
+
+//Time convertion function
+// 	function convert($date) {
+// 		$converteddate = TimeIn("M j, Y g:ia". strtotime($date));
+// 		return $converteddate;}
+// echo $converteddate;
 	
 //If the number of rows in out result set is grater than zero, run this while loop. The while loop returns an associative array of strings.
 	$_SESSION["searchResults"] = array();
 	if (mysqli_num_rows($result) > 0) {
 	while ($row = mysqli_fetch_assoc($result)){ 
-		$_SESSION["searchResults"] []= $row; } }
+		$_SESSION["searchResults"] []= $row; } 
 
 		foreach ($_SESSION["searchResults"] as $data) {?>
 		<tr>
@@ -83,7 +91,7 @@ if (isset($_POST['submit'])) {
 else {?> 
 	<tr> <td colspan="7"> <?php echo "No Matches"; ?></td> </tr>
 <?php
-} 
+} }
 ?>
 
 </table>
