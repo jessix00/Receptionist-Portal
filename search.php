@@ -16,8 +16,8 @@
 				<option value="Contact">Ipro Contact</option>
 				<option value="Purpose">Purpose</option>
 				<option value="Badge">Badge Number</option>
-				<option value="TimeIn">Time In</option>
-				<option value="Timeout">Time Out</option>
+				<option value="TimeIn">Date In</option>
+				<option value="Timeout">Date Out</option>
 			</select>
 			<!--Find Button-->
 			<input type="submit" name="submit" value="Find">
@@ -36,8 +36,8 @@
 				<th>Ipro Contact</th>
 				<th>Purpose</th>
 				<th>Badge</th>
-				<th>Time In</th>
-				<th>Time Out</th>
+				<th>Date In</th>
+				<th>Date Out</th>
 			</tr>
 
 <?php 
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
  	$column = "Name";
 
 //Fetch from DB
-	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%e/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%e/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%'";
+	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%e/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%e/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%' OR DATE_FORMAT(TimeIn, '%m/%e/%Y') LIKE '$query%' OR DATE_FORMAT(Timeout, '%m/%e/%Y') LIKE '$query%'";
 	$result = mysqli_query($connection, $sql);
 
 
