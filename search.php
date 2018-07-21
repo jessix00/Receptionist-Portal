@@ -3,14 +3,17 @@
 		<title>Advanced Search</title>
 		<link rel="stylesheet" href="searchStyles.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="jquery/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+		  <script src="jquery/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="jquery/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 	</head>
 		<body>
 		<h1>Advanced Search</h1>
 	<!--Search Bar and Options-->
 	<div class="searchBar">
 		<form class="searchButton" method="post" action="search.php" autocomplete="off">
-			<input type="text" name="query" placeholder="Search">
-			<select name="column">
+		<input type="text" id="date" name="query" placeholder="Search">
+			<select name="column" id="column_to_select">
 				<option value="Name">Name</option>
 				<option value="CompanyName">Company Name</option>
 				<option value="Contact">Ipro Contact</option>
@@ -19,6 +22,7 @@
 				<option value="TimeIn">Date In</option>
 				<option value="Timeout">Date Out</option>
 			</select>
+
 			<!--Find Button-->
 			<input type="submit" name="submit" value="Find">
 		</form>
@@ -58,16 +62,9 @@ if (isset($_POST['submit'])) {
 
 //Fetch from DB
 	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%e/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%e/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%' OR DATE_FORMAT(TimeIn, '%m/%e/%Y') LIKE '$query%' OR DATE_FORMAT(Timeout, '%m/%e/%Y') LIKE '$query%'";
+
 	$result = mysqli_query($connection, $sql);
 
-
-
-//Time convertion function
-// 	function convert($date) {
-// 		$converteddate = TimeIn("M j, Y g:ia". strtotime($date));
-// 		return $converteddate;}
-// echo $converteddate;
-	
 //If the number of rows in out result set is grater than zero, run this while loop. The while loop returns an associative array of strings.
 	$_SESSION["searchResults"] = array();
 	if (mysqli_num_rows($result) > 0) {
@@ -93,7 +90,24 @@ else {?>
 <?php
 } }
 ?>
-
 </table>
+
+<!--jQuery Date Picker script-->
+<script>
+//get value from selected column under the #column_to_select ID
+$('#column_to_select').change(function() {
+//save that value under a variable called DateOption	
+	var DateOption = $(this).val();
+//if the value of the DateOption variable is TimeIn OR Timeout, add the datepicker
+	if (DateOption == 'TimeIn' || DateOption == 'Timeout' ) {
+	$('#date').datepicker();
+//otherwise, remove datepicker.
+	} else {
+		$('#date').prev().val('');
+		$('#date').datepicker("destroy")
+
+}});
+
+</script>
 </body>
 </html>
