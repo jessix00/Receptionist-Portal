@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
  	$column = "Name";
 
 //Fetch from DB
-	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%e/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%e/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%' OR DATE_FORMAT(TimeIn, '%m/%e/%Y') LIKE '$query%' OR DATE_FORMAT(Timeout, '%m/%e/%Y') LIKE '$query%'";
+	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%e/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%e/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%' OR DATE_FORMAT($column, '%m/%e/%Y') LIKE '$query%'";
 
 	$result = mysqli_query($connection, $sql);
 
@@ -89,6 +89,7 @@ else {?>
 	<tr> <td colspan="7"> <?php echo "No Matches"; ?></td> </tr>
 <?php
 } }
+
 ?>
 </table>
 
@@ -107,7 +108,6 @@ $('#column_to_select').change(function() {
 		$('#date').datepicker("destroy")
 
 }});
-
 </script>
 </body>
 </html>
