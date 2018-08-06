@@ -1,5 +1,6 @@
 <?php
-//connection
+// This page inserts inputs from index (client sign in page)to our database.
+//connection to database
 include 'conn.php';
 if(!$conn)
     {

@@ -1,13 +1,11 @@
 <?php
 //connection
 include 'conn.php';
-
 //select database 
 if(isset($_GET['edit_id'])){
     $sql = "SELECT * FROM form1 WHERE ID =" .$_GET['edit_id'];
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);} 
-
 //update the information in these columns
 if(isset($_POST['btn-update'])){
     $name = $_POST['Name'];
@@ -25,7 +23,7 @@ if(isset($_POST['btn-update'])){
 ?>
 
 <!--edit form -->
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
     <head> 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -36,13 +34,13 @@ if(isset($_POST['btn-update'])){
 <body>
     <form method="post" autocomplete="off">
         <h1>Edit Information</h1>
-        <label>Full Name:</label><input type="text" name="Name" placeholder="Name" value="<?php echo $row['Name']; ?>"><br/><br/>
-        <label>Company Name:</label><input type="text" name="CompanyName" placeholder="Company Name" value="<?php echo $row['CompanyName']; ?>"><br/><br/>
-        <label>Contact:</label><input type="text" name="Contact" placeholder="Contact" value="<?php echo $row['Contact']; ?>"><br/><br/>
-        <label>Purpose:</label><input type="text" name="Purpose" placeholder="Purpose" value="<?php echo $row['Purpose']; ?>"><br/><br/>
-        <label>Badge-Number:</label><input type="number" name="Badge" placeholder="Badge Number" value="<?php echo $row['Badge']; ?>"><br/><br/>
-        <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Save &amp; Submit</strong></button>
-        <a href="disp.php"><button type="button" value="button">Cancel</button></a>
+            <label>Full Name:</label><input type="text" name="Name" placeholder="Name" value="<?php echo $row['Name']; ?>"><br/><br/>
+            <label>Company Name:</label><input type="text" name="CompanyName" placeholder="Company Name" value="<?php echo $row['CompanyName']; ?>"><br/><br/>
+            <label>Contact:</label><input type="text" name="Contact" placeholder="Contact" value="<?php echo $row['Contact']; ?>"><br/><br/>
+            <label>Purpose:</label><input type="text" name="Purpose" placeholder="Purpose" value="<?php echo $row['Purpose']; ?>"><br/><br/>
+            <label>Badge-Number:</label><input type="number" name="Badge" placeholder="Badge Number" value="<?php echo $row['Badge']; ?>"><br/><br/>
+            <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Save &amp; Submit</strong></button>
+            <a href="disp.php"><button type="button" value="button">Cancel</button></a>
     </form>
 <!-- alert for updating -->
 <script>

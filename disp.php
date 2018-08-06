@@ -1,7 +1,18 @@
 <?php
+//This page displays current visitors in the office
 //Connection to database
-  include 'conn.php';
-//Select database where Timeout has no value
+include 'conn.php';
+if(!$conn)
+    {
+    echo 'Not Connected to Server';
+    }
+//checks login is valid
+  session_start();
+//if session has not started or if loggedIn is false return to login page
+  if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+   header("Location: login.php");
+  }
+//Select only database items where Timeout has no value
   $sql = "SELECT * FROM form1 WHERE Timeout ='NULL'";
   $result = $conn->query($sql);
 ?>
@@ -15,7 +26,6 @@
   	<link href-"normalize.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="dispStyles.css">
   </head>
-
 <body>
   <div id="getData">
     <h1>Visitor Log</h1>
@@ -26,7 +36,7 @@
           <th class="firstHead">Ipro Contact</th>
           <th class="firstHead">Purpose</th>
           <th class="firstHead">Badge</th>
-          <th class="firstHead"> <a href="search.php">Advanced Search</a></th>
+          <th class="firstHead"> <a href="search.php">Search</a></th>
       </tr>
 <?php
 //Fetch data from DB
@@ -56,8 +66,8 @@ else {
      }
 ?>
 
+<!--Time Out Button Script -->
 <script language="javascript">
-//Time Out Button Script
     function change(out) {
         if(confirm("Do you want to clock-out visitor?")){
             window.location.href='timeout.php?time_out=' +out+'';
