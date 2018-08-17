@@ -1,5 +1,5 @@
 <?php
-//This page validates password and username 
+//This page validates password and username. innactive. 
 	session_start();
 	$username = "username";
 	$password = "password";
@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login Portal</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href-"normalize.css" rel="stylesheet">
+	<link href="normalize.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="indexStyles.css">
 </head>
 

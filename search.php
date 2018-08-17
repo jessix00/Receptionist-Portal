@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
 	if ($column == "" || ($column != "Name" && $column != "CompanyName" && $column != "Contact" && $column != "Purpose" && $column != "Badge" && $column != "TimeIn" && $column != "Timeout"))
  	$column = "Name";
 //Fetch from DB where our selected column matches our query
-	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%e/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%e/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%' OR DATE_FORMAT($column, '%m/%e/%Y') LIKE '$query%'";
+	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%d/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%d/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%' OR DATE_FORMAT($column, '%m/%d/%Y') LIKE '$query%'";
 	$result = mysqli_query($conn, $sql);
 //If the number of rows in our result set is grater than zero, run this while loop. The while loop returns an associative array of strings that match our search term.
 	session_start();

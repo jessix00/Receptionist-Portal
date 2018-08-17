@@ -31,10 +31,10 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `form1`;
 CREATE TABLE `form1` (
   `ID` int(11) NOT NULL,
-  `Name` varchar(20) DEFAULT NULL,
-  `CompanyName` varchar(20) NOT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `CompanyName` varchar(50) NOT NULL,
   `Contact` varchar(50) NOT NULL,
-  `Purpose` varchar(20) DEFAULT NULL,
+  `Purpose` varchar(50) DEFAULT NULL,
   `Badge` varchar(20) DEFAULT NULL,
   `TimeIn` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `Timeout` datetime DEFAULT '0000-00-00 00:00:00',

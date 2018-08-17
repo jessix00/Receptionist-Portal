@@ -27,7 +27,7 @@ if(isset($_POST['btn-update'])){
 <html>
     <head> 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href-"normalize.css" rel="stylesheet">
+        <link href="normalize.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="editStyles.css">
     </head>
 <!--Form input fields start here-->

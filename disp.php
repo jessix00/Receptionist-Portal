@@ -7,13 +7,13 @@ if(!$conn)
     echo 'Not Connected to Server';
     }
 //checks login is valid
-  session_start();
+//  session_start();
 //if session has not started or if loggedIn is false return to login page
-  if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
-   header("Location: login.php");
-  }
+//  if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+//  header("Location: login.php");
+//  }
 //Select only database items where Timeout has no value
-  $sql = "SELECT * FROM form1 WHERE Timeout ='NULL'";
+  $sql = "SELECT * FROM form1 WHERE Timeout IS NULL";
   $result = $conn->query($sql);
 ?>
 
@@ -23,7 +23,7 @@ if(!$conn)
     <meta name="viewport" content="width=device-width, initial-scale=1">
   	<title>Visitor Log</title>
   	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  	<link href-"normalize.css" rel="stylesheet">
+  	<link href="normalize.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="dispStyles.css">
   </head>
 <body>
