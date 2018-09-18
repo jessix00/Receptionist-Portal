@@ -3,35 +3,58 @@
   font-size: 15px;
   background: #e2dedb;
   color: #000;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  text-align: center;
-  padding: 35px 0 20px;
+.visitorTitle{
+  text-align: left;
   font-size: 35px;
-}   
+  display: inline-block;
+  background-color: #414141;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  font-weight: normal;
+  padding: 15px 0 15px 0;
+  margin: 0;
+  padding-left: 50px;
+}
 
 a {
   text-decoration: underline;
-  color: blue;
+  color: #fff;
 }
 
 table {
   position: relative;
-  margin: 20px auto 100px auto;
+  margin: 0px auto 0px auto;
+  width: 100%;
   background-color:#fff;
   border-collapse: collapse;
 } 
+
+
+th{
+  font-size: 20px;
+  color: #fff;
+  font-weight: normal;
+  text-align: left;
+  border-bottom: solid 2px #346fa2;
+  background-color: #346fa2;
+  padding:10px 15px 10px 20px;
+}
 
 tr {
   border: solid 1px #b3aca7;
 }
 .firstHead {
   padding:10px 50px 10px 50px;
-  background-color:#fff;
   border-bottom: solid 2px #b3aca7;
   text-align: left;
-  background-color: #5daec6;
+  background-color: #346fa2;
+  color:#fff;
+  font-weight: normal;
 }
 
 .firstRows {
@@ -41,8 +64,25 @@ tr {
   border-collapse: collapse;      
 }
 
-.editButton{
-  margin: 10px;
-  text-decoration: none;
-  color: #000;
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor:pointer;
 }
+
+.fa-sign-out-alt{
+  color: #346fa2;
+  font-size: 20px;
+}
+
+.fa-user-edit {
+  color: #346fa2;
+    font-size: 20px;
+}
+
+.searchLink {
+  color:#fff;
+  font-size: 25px;
+}
+

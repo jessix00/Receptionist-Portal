@@ -6,25 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Client Sign-In Form</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="normalize.css" rel="stylesheet">
+	<link href-"normalize.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="indexStyles.css">
 </head>
 
 <body>
-	<img class="logo" src="img/ipro.png" alt="Ipro Logo" >
-	<h1 class="signin-header">Please Sign-In</h1>
+	
+		<img class="logo" src="img/ipro.png" alt="Ipro Logo" >
+
 
 <!--Form fields, sends data to insert.php when submited -->
 	<div class= "container">
-		<form action="insert.php" method="post" autocomplete="off">		
-			<input class="name" type="text" placeholder="Full Name" name="Name"/>
-			<input class="companyname" type="text" placeholder="Company Name" name="CompanyName" /> 
-			<input class="contact" type="text" placeholder="Ipro Contact" name="Contact" />
-			<input class="purpose" type="text" placeholder="Purpose of Visit" name="Purpose"/>
-			<input class="badge" type="number" placeholder="Badge Number" name="Badge" />	
-			<button type="submit">Submit</button>
+				<h1 class="signin-header">Please Sign-In</h1>
+			<form action="insert.php" method="post" autocomplete="off">		
+				<input class="name" type="text" placeholder="Full Name" name="Name"/>
+				<input class="companyname" type="text" placeholder="Company Name" name="CompanyName" /> 
+				<input class="contact" type="text" placeholder="Ipro Contact" name="Contact" />
+				<input class="purpose" type="text" placeholder="Purpose of Visit" name="Purpose"/>
+				<input class="badge" type="number" placeholder="Badge Number" name="Badge" />	
+				<button type="submit">Submit</button>
 	</div>
-		</form>
+			</form>
 
 </body>
 </html>

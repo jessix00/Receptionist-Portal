@@ -3,57 +3,99 @@ body {
   font-size: 20px;
   background: #e2dedb;
   color: #000;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  text-align: center;
-  padding: 15px 0 5px;
-  font-size: 35px;
-}   
+i {
+  color: black;
+}
 
-table {
+.searchTitle {
+  font-size: 40px;
+  color: #fff;
+  font-weight: normal;
+  margin: 0;
+  float:left;
+  background-color: #414141;
+  padding-left: 50px;
+}
+
+.searchSection {
   position: relative;
-  margin: 20px auto 100px auto;
-  background-color:#fff;
-  text-align: center;
-  border-collapse: collapse;
+  background-color: #414141;
+  width: 100%;
+  float:right;
+  height: 50px;
+  padding: 15px 0 15px 0;
+  margin: 0;
+  padding-left: 50px;
 } 
-
-a {
-  text-decoration: underline;
-  color: blue;
-  font-size: 15px;
-  padding-left: 5px;
-}
-
 
 .searchBar {
   position: relative;
-  text-align: center;
-} 
+  margin-left: 65%;
+}
 
+.keywordSearchField {
+  height: 35px;
+  width: 170px;
+}
+
+.dropDown {
+    height: 35px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #fff;
+  cursor:pointer;
+}
 .searchButton {
   display: inline-block;
 }
 
 .exportButton {
   display: inline-block;
+
 }
 
-th {
-  padding: 10px;
+.visitorLink {
+  display: inline-block;
+}
+
+i{
+  color: #fff;
+  padding: 5px;
+}
+table {
+  position: relative;
+  margin: 0px auto 0px auto;
+  width: 100%;
   background-color:#fff;
-  border-bottom: solid 2px #b3aca7;
-  background-color: #5daec6;
-  padding:10px 20px 10px 20px;
-  text-align: left;  
+  text-align: center;
+  border-collapse: collapse;
+} 
+
+th {
+  font-size: 20px;
+  color: #fff;
+  font-weight: normal;
+  text-align: left;
+  padding: 10px;
+  border-bottom: solid 2px #346fa2;
+  background-color: #346fa2;
+  padding:10px 15px 10px 20px;
 }
 
 td {
   padding: 5px;
   background-color:#fff;
   border-bottom: solid 1px #b3aca7;
-  padding:10px 20px 10px 20px;
+  padding:10px 15px 10px 20px;
   text-align: left;
 }
 

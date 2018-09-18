@@ -27,20 +27,22 @@ if(isset($_POST['btn-update'])){
 <html>
     <head> 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="normalize.css" rel="stylesheet">
+        <link href-"normalize.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="editStyles.css">
     </head>
 <!--Form input fields start here-->
 <body>
-    <form method="post" autocomplete="off">
-        <h1>Edit Information</h1>
+    <h1 class="editTitle">Edit Information</h1>
+     <form method="post" autocomplete="off">
             <label>Full Name:</label><input type="text" name="Name" placeholder="Name" value="<?php echo $row['Name']; ?>"><br/><br/>
             <label>Company Name:</label><input type="text" name="CompanyName" placeholder="Company Name" value="<?php echo $row['CompanyName']; ?>"><br/><br/>
             <label>Contact:</label><input type="text" name="Contact" placeholder="Contact" value="<?php echo $row['Contact']; ?>"><br/><br/>
             <label>Purpose:</label><input type="text" name="Purpose" placeholder="Purpose" value="<?php echo $row['Purpose']; ?>"><br/><br/>
             <label>Badge-Number:</label><input type="number" name="Badge" placeholder="Badge Number" value="<?php echo $row['Badge']; ?>"><br/><br/>
-            <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Save &amp; Submit</strong></button>
-            <a href="disp.php"><button type="button" value="button">Cancel</button></a>
+            <div class="buttonContainer">
+            <button type="submit" name="btn-update" id="btn-update" onClick="update()">Save</button>
+            <a href="disp.php"><button type="button" value="button">Cancel</button></a> 
+            </div>
     </form>
 <!-- alert for updating -->
 <script>

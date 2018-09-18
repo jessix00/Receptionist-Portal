@@ -10,7 +10,7 @@ if(!$conn)
 //  session_start();
 //if session has not started or if loggedIn is false return to login page
 //  if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
-//  header("Location: login.php");
+//   header("Location: login.php");
 //  }
 //Select only database items where Timeout has no value
   $sql = "SELECT * FROM form1 WHERE Timeout IS NULL";
@@ -23,12 +23,13 @@ if(!$conn)
     <meta name="viewport" content="width=device-width, initial-scale=1">
   	<title>Visitor Log</title>
   	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  	<link href="normalize.css" rel="stylesheet">
+    <link href="fontawesome5.3.1-web/css/all.css" rel="stylesheet">
+  	<link href-"normalize.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="dispStyles.css">
   </head>
 <body>
   <div id="getData">
-    <h1>Visitor Log</h1>
+    <h1 class="visitorTitle">Current Visitors</h1>
       <table>
         <tr>
           <th class="firstHead">Name</th>
@@ -36,7 +37,7 @@ if(!$conn)
           <th class="firstHead">Ipro Contact</th>
           <th class="firstHead">Purpose</th>
           <th class="firstHead">Badge</th>
-          <th class="firstHead"> <a href="search.php">Search</a></th>
+          <th class="firstHead"> <a class="searchLink" href="search.php"><i class="fas fa-search"></i></a></th>
       </tr>
 <?php
 //Fetch data from DB
@@ -50,8 +51,8 @@ if($result ->num_rows > 0){
         <td class="firstRows"><?php echo $row['Purpose']; ?></td>
         <td class="firstRows"><?php echo $row['Badge']; ?></td>
        <!--Edit/Sign-Out Buttons -->
-        <td class="firstRows"><button><a class="editButton" href="edit.php?edit_id=<?php echo $row['ID']; ?>" alt="edit">Edit</a></button> 
-        <input type="button" onClick="change(<?php echo $row['ID']; ?>)" name="Time-Out" value="Sign-Out"></td>
+        <td class="firstRows"><button><a href="edit.php?edit_id=<?php echo $row['ID']; ?>" alt="edit"><i class="fas fa-user-edit"></i></a></button> 
+        <button type="button" onClick="change(<?php echo $row['ID']; ?>)" name="Time-Out" value="Sign-Out"> <i class="fas fa-sign-out-alt"></i> </td></button>
     </tr>
 </div>
 
@@ -75,16 +76,16 @@ else {
         }
     }
 //Ajax auto-refresh
-  function dis () {
-  xmlhttp=new XMLHttpRequest ();
-  xmlhttp.open("GET","disp.php",false);
-  xmlhttp.send(null);
-  document.getElementById("getData").innerHTML=xmlhttp.responseText;
-}
-  dis();
-  setInterval (function(){
-  dis();
-}, 2000);
+function dis () {
+   xmlhttp=new XMLHttpRequest ();
+   xmlhttp.open("GET","disp.php",false);
+   xmlhttp.send(null);
+   document.getElementById("getData").innerHTML=xmlhttp.responseText;
+ }
+   dis();
+   setInterval (function(){
+   dis();
+ }, 2000);
 </script>
 
 </table>

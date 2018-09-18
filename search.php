@@ -3,17 +3,21 @@
 		<title>Search</title>
 			<link rel="stylesheet" href="searchStyles.css">
 			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+			<link href="fontawesome5.3.1-web/css/all.css" rel="stylesheet">
 			<link rel="stylesheet" href="jquery/jquery-ui-1.12.1.custom/jquery-ui.min.css">
 			<script src="jquery/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
   			<script src="jquery/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 	</head>
+
 	<body>
-		<h1>Search</h1>
+		<div class="searchSection">
+		<h1 class="searchTitle">Search</h1> 
 			<!--Search Bar and Options-->
-			<div class="searchBar">
+		<div class="searchBar">
 				<form class="searchButton" method="post" action="search.php" autocomplete="off">
-					<input type="text" id="date" name="query" placeholder="Search">
-						<select name="column" id="column_to_select">
+					<input class="keywordSearchField" type="text" id="date" name="query" placeholder="Search Keyword">
+						<select class="dropDown" name="column" id="column_to_select">
+							<option value="Filter">Filter By</option>
 							<option value="Name">Name</option>
 							<option value="CompanyName">Company Name</option>
 							<option value="Contact">Ipro Contact</option>
@@ -23,15 +27,19 @@
 							<option value="Timeout">Date Out</option>
 						</select>
 					<!--Find Button-->
-					<input type="submit" name="submit" value="Find">
+					<button type="submit" name="submit" value="Find" <i class="fas fa-search"></i></button>
+					
 				</form>
 				<!--CSV Export Button. If clicked, script on export.php will execute-->
 				<form class= "exportButton" method="post" action="export.php">
-					<input type="submit" name="export" value="Export"/>
+					<button type="submit" name="export" value="Export" <i class="fas fa-file-download"></i></button>
 				</form>
-				<!--Visitor Log Link-->		
-				<a href="disp.php">Visitor Log </a>
+				<!--Visitor Log Link-->	
+				 <a class= "visitorLink" href="disp.php"><i class="fas fa-arrow-left"></i></a>	
+				
 			</div>
+		</div>		
+
 		<table id="iproData">
 			<tr>
 				<th>Name</th>
