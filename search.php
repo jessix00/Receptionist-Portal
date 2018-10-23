@@ -27,15 +27,15 @@
 							<option value="Timeout">Date Out</option>
 						</select>
 					<!--Find Button-->
-					<button type="submit" name="submit" value="Find" <i class="fas fa-search"></i></button>
+					<button type="submit" name="submit" value="Find" title="Search" <i class="fas fa-search"></i></button>
 					
 				</form>
 				<!--CSV Export Button. If clicked, script on export.php will execute-->
 				<form class= "exportButton" method="post" action="export.php">
-					<button type="submit" name="export" value="Export" <i class="fas fa-file-download"></i></button>
+					<button type="submit" name="export" value="Export" title="Export CSV" <i class="fas fa-file-download"></i></button>
 				</form>
 				<!--Visitor Log Link-->	
-				 <a class= "visitorLink" href="disp.php"><i class="fas fa-arrow-left"></i></a>	
+				 <a class= "visitorLink" href="disp.php" title="Back to Visitor Log"><i class="fas fa-arrow-left"></i></a>	
 				
 			</div>
 		</div>		
@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
 	if ($column == "" || ($column != "Name" && $column != "CompanyName" && $column != "Contact" && $column != "Purpose" && $column != "Badge" && $column != "TimeIn" && $column != "Timeout"))
  	$column = "Name";
 //Fetch from DB where our selected column matches our query
-	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%d/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%d/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE '$query%' OR DATE_FORMAT($column, '%m/%d/%Y') LIKE '$query%'";
+	$sql = "SELECT Name, CompanyName, Contact, Purpose, Badge, DATE_FORMAT(TimeIn,'%m/%d/%Y %h:%i %p') TimeIn, DATE_FORMAT(Timeout,'%m/%d/%Y %h:%i %p') Timeout FROM form1 WHERE $column LIKE concat('%', '$query', '%') OR DATE_FORMAT($column, '%m/%d/%Y') LIKE '$query%' ORDER BY timeIn desc";
 	$result = mysqli_query($conn, $sql);
 //If the number of rows in our result set is grater than zero, run this while loop. The while loop returns an associative array of strings that match our search term.
 	session_start();

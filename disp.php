@@ -37,7 +37,7 @@ if(!$conn)
           <th class="firstHead">Ipro Contact</th>
           <th class="firstHead">Purpose</th>
           <th class="firstHead">Badge</th>
-          <th class="firstHead"> <a class="searchLink" href="search.php"><i class="fas fa-search"></i></a></th>
+          <th class="firstHead"> <a class="searchLink" href="search.php"><i class="fas fa-search"></i><span class= "searchText">Search</span></a></th>
       </tr>
 <?php
 //Fetch data from DB
@@ -51,8 +51,8 @@ if($result ->num_rows > 0){
         <td class="firstRows"><?php echo $row['Purpose']; ?></td>
         <td class="firstRows"><?php echo $row['Badge']; ?></td>
        <!--Edit/Sign-Out Buttons -->
-        <td class="firstRows"><button><a href="edit.php?edit_id=<?php echo $row['ID']; ?>" alt="edit"><i class="fas fa-user-edit"></i></a></button> 
-        <button type="button" onClick="change(<?php echo $row['ID']; ?>)" name="Time-Out" value="Sign-Out"> <i class="fas fa-sign-out-alt"></i> </td></button>
+        <td class="firstRows"><button><a href="edit.php?edit_id=<?php echo $row['ID']; ?>" alt="edit" title="Edit Visitor"><i class="fas fa-user-edit"></i></a></button> 
+        <button type="button" onClick="change(<?php echo $row['ID']; ?>)" name="Time-Out" title="Sign-Out" value="Sign-Out"> <i class="fas fa-sign-out-alt"></i></td></button>
     </tr>
 </div>
 
