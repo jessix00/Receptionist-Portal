@@ -1,3 +1,6 @@
+## Purpose
+The purpose of this project is to automate the way visitors sign into Ipro's office. In the past, visitors had to sign in with pen and paper. This application is meant to cut down on paper waste and labor.
+
 ## Tech Used
 * HTML
 * CSS
