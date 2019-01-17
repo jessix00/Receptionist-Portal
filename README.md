@@ -20,10 +20,6 @@ This project is devided in to three parts.
 
 3. search.php is also only meant to be accessed by the receptionist. In this page the receptionist can conduct searches based on selected column. search.php can be accessed via the disp.php page.
 
-## Installation
-How to run this project on your local machine using localHost.
-
-
 ## Contribute
 Here are some ways you can contribute to my project:
 
