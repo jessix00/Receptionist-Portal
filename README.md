@@ -6,6 +6,7 @@ The purpose of this project is to automate the way visitors sign into Ipro's off
 * CSS
 * PHP
 * MySQL
+* jQuery
 
 ## Dependancies
 * Font-Awesome
